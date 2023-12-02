@@ -1,0 +1,7 @@
+---
+- name: Disable CrashReporter dialog
+  community.general.osx_defaults:
+    domain: com.apple.CrashReporter
+    key: DialogType
+    type: string
+    value: none

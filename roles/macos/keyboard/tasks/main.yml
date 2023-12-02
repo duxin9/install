@@ -1,0 +1,41 @@
+---
+- name: Disable press-and-hold for keys in favor of key repeat
+  community.general.osx_defaults:
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+- name: When the key repeat starts (default is 15 or 225ms)
+  community.general.osx_defaults:
+    key: InitialKeyRepeat
+    type: int
+    value: 15
+- name: Key repeat (default is 2 or 30ms)
+  community.general.osx_defaults:
+    key: KeyRepeat
+    type: int
+    value: 2
+- name: 'Disable AutoCorrect'
+  community.general.osx_defaults:
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+- name: 'Disable automatic capitalization'
+  community.general.osx_defaults:
+    key: NSAutomaticCapitalizationEnabled
+    type: bool
+    value: false
+- name: 'Disable smart dashes'
+  community.general.osx_defaults:
+    key: NSAutomaticDashSubstitutionEnabled
+    type: bool
+    value: false
+- name: 'Disable automatic period substitutions'
+  community.general.osx_defaults:
+    key: NSAutomaticPeriodSubstitutionEnabled
+    type: bool
+    value: false
+- name: 'Disable smart quotes'
+  community.general.osx_defaults:
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: bool
+    value: false

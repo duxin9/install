@@ -1,0 +1,31 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  tasks:
+    - name: Include variables (main)
+      include_vars: 
+        file: vars/main_vars.yml
+    - name: Configure macOS
+      include_role:
+        name: "macos/{{ item }}"
+      loop: "{{ macos_configs | default(['keyboard', 'finder', 'misc']) }}"
+    - name: Install brew packages
+      community.general.homebrew:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_packages }}'
+      when: skip_brew is not defined
+    - name: Install brew cask packages
+      community.general.homebrew_cask:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_cask_packages }}'
+      when: skip_brew_cask is not defined
+    - name: Install ruby gems
+      community.general.gem:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ gems }}'
+      environment:
+        PATH: "{{ ansible_env.HOME }}/.rbenv/shims"

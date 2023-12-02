@@ -1,0 +1,41 @@
+---
+homebrew_packages:
+  - tree
+  - telnet
+  - jq
+  - screen
+  - icu4c
+  - cmake
+  - tmux
+  - gpg
+  - hub
+  - the_silver_searcher
+  - wget
+  - ffmpeg
+  - imagemagick
+  - node
+  - htop
+  - gnu-sed
+  - xcodegen
+  - ansible
+  - coreutils
+  - pyenv
+homebrew_cask_packages:
+  - iterm2
+  - keyboard-maestro
+  - little-snitch
+  - launchbar
+  - fsnotes
+  - devonthink
+  - visual-studio-code
+  - obsidian
+  - telegram
+  - google-chrome
+  - linearmouse
+  - iina
+  - cryptomator
+  - tower
+gems:
+  - thwait
+  - fastlane
+  - cocoapods
